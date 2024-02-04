@@ -21,7 +21,7 @@ class Solution:
  
 
 
-#         # traverse the matrix:
+
 #         for i in range(n):
 #             for j in range(m):
 #                 if matrix[i][j] == target:
