@@ -1,6 +1,7 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         #optimal
+
         if len(s)!=len(t):
             return False
         count_s={}
@@ -10,6 +11,7 @@ class Solution:
             count_t[t[i]]=1+count_t.get(t[i],0)
         
         return count_s==count_t
+    
         #brute force
 #         def remove_non_alphanumeric(s: str) -> str:
 #             return ''.join(c.lower() for c in s if c.isalnum())
