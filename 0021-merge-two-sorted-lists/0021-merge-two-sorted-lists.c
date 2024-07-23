@@ -5,32 +5,34 @@
  *     struct ListNode *next;
  * };
  */
+
 struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
-    struct ListNode* first=list1;
-    struct ListNode* second=list2;
-    struct ListNode* result=malloc(sizeof(struct ListNode));
-    struct ListNode* current=result;
     
-    while(first!=NULL && second!=NULL){
-        if(first->val <= second->val){
-            current->next=first;
-            first=first->next;
+    struct ListNode* t1=list1;
+    struct ListNode* t2=list2;
+    struct ListNode* dummy=malloc(sizeof(struct ListNode));
+    struct ListNode* temp=dummy;
+    while (t1!=NULL && t2!=NULL){
+        if(t1->val<t2->val){
+            temp->next=t1;
+            temp=t1;
+            t1=t1->next;
         }
         else{
-            current->next=second;
-            second=second->next;
+            temp->next=t2;
+            temp=t2;
+            t2=t2->next;
         }
-        current=current->next;
     }
-     if (first != NULL) {
-        current->next = first;
-    } 
-    else {
-        current->next = second;
+    if(t1){
+        temp->next=t1;
     }
-    struct ListNode* ans=result->next;
-    free(result);
-    
-    return ans;
-  
+    else{
+        temp->next=t2;
+
+    }
+    return dummy->next;
+        
+        
 }
+ 
