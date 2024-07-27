@@ -32,12 +32,11 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     
     
     //optimal approach
-    
     struct ListNode* dummy = malloc(sizeof(struct ListNode));
     dummy->next=head;
-    struct ListNode* slow=dummy;
-    struct ListNode* fast =dummy;
-    for(int i=0;i<n;i++){
+    struct ListNode* slow = dummy;
+    struct ListNode* fast=dummy;
+    for (int i=0;i<n;i++){
         fast=fast->next;
     }
     while(fast->next!=NULL){
@@ -45,9 +44,9 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
         fast=fast->next;
     }
     
-    struct ListNode* del =slow->next;
-    slow->next=del->next;
-    free(del);
+    struct ListNode* remove=slow->next;
+    slow->next=remove->next;
+    free(remove);
     return dummy->next;
     
 }
