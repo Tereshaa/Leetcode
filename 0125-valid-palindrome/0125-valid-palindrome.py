@@ -5,14 +5,15 @@ class Solution:
         while l<r:
             while l<r and not self.isalphanum(s[l]):
                 l=l+1
-            while r>l and not self.isalphanum(s[r]):
+            while l<r and not self.isalphanum(s[r]):
                 r=r-1
-            if s[l].lower() != s[r].lower():
+            if s[l].lower()!=s[r].lower():
                 return False
-            l=l+1
-            r=r-1
+            l+=1
+            r-=1
         return True
-        
+
+
         
         
     def isalphanum(self,c):
