@@ -8,9 +8,8 @@ class Solution:
                 if s[i]!=s[j]:
                     return False
                 i=i+1
-                j=j-1
+                j-=1
             return True
-                
         def dfs(i):
             if i>=len(s):
                 res.append(partition.copy())
@@ -22,4 +21,3 @@ class Solution:
                     partition.pop()
         dfs(0)
         return res
-    
