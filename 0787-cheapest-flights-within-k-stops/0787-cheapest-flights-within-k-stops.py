@@ -1,6 +1,6 @@
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
-        graph = collections.defaultdict(list)
+        graph = {i:[] for i in range(n)}
         for u, v, w in flights:
             graph[u].append((v, w))
         
