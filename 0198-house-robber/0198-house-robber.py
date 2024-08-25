@@ -4,7 +4,6 @@ class Solution:
         prev2=0
         prev1=nums[0]
         for i in range(1,n):
-            
             if i>0:
                 pick=nums[i] +prev2
             nopick=0+prev1
