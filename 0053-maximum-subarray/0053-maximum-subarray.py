@@ -1,16 +1,15 @@
 import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        n=len(nums)
-        maxi= - sys.maxsize
+        maxsubarray=float("-inf")
         sum=0
-        for i in range(n):
+        for i in range(len(nums)):
             sum=sum+nums[i]
-            if sum>maxi:
-                maxi=sum
+            if sum>maxsubarray:
+                maxsubarray=sum
             if sum<0:
                 sum=0
-        return maxi
+        return maxsubarray
     
     
 #     to find subarray
