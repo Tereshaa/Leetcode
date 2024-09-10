@@ -4,11 +4,9 @@ class Solution:
             return False
         if len(s)!=len(t):
             return False
-        tc={}
         sc={}
+        tc={}
         for i in range(len(s)):
             sc[s[i]]=1+sc.get(s[i],0)
             tc[t[i]]=1+tc.get(t[i],0)
-        return tc==sc
-      
-       
+        return sc==tc
