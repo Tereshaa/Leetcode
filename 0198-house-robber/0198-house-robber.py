@@ -7,12 +7,12 @@ class Solution:
             take=nums[i]
             if i>1:
                 take+=prev2
-            notake=0+prev1
-            curr=max(take,notake)
+            nottake=prev1
+            curr=max(take,nottake)
             prev2=prev1
             prev1=curr
         return prev1
-        
+
         
         
         
