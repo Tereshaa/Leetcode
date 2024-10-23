@@ -14,7 +14,7 @@ class Solution:
                 stack.append(curr)
                 curr=curr.left
             curr=stack.pop()
-            n +=1
+            n+=1
             if n==k:
                 return curr.val
             curr=curr.right
